@@ -31,7 +31,7 @@ const response = await fetch('https://api.whereby.dev/v1/meetings', {
   },
   body: JSON.stringify({
     "isLocked":true,
-  "endDate": "2024-05-08T11:05:52.731Z",
+  "endDate": "2024-05-27T11:05:52.731Z",
   fields: ["hostRoomUrl"],
   }),
 });
