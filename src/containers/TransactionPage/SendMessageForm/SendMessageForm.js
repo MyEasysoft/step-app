@@ -10,8 +10,8 @@ import { propTypes } from '../../../util/types';
 import { Form, FieldTextInput, SecondaryButtonInline, NamedLink, ExternalLink } from '../../../components';
 
 import css from './SendMessageForm.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVideo } from '@fortawesome/free-solid-svg-icons';
+
+import videoCall from '../../../assets/videocall.png';
 
 const BLUR_TIMEOUT_MS = 100;
 
@@ -106,7 +106,8 @@ class SendMessageFormComponent extends Component {
 
                 {roomUrl !== undefined?
                     <ExternalLink href={roomUrl} className={css.callBtn}>
-                      <FontAwesomeIcon icon={faVideo} />
+                      <img src={videoCall} className={css.vidCallBtn}/>
+                      
                     </ExternalLink>:""
                  }
                 

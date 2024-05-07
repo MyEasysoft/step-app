@@ -64,3 +64,13 @@
   height: 40px;
   margin-top: 25px;
 }
+
+.vidCallBtn{
+  border-style: none;
+  margin-right: 10px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  margin-top: -10px;
+  
+}
