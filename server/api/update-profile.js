@@ -96,6 +96,9 @@ const updateUser = (isSeller)=>{
   })
 
   const updateUserProfileData = (currentListings)=>{
+    if(currentListings === undefined){
+      currentListings = {};
+    }
     if(checkIfExist(currentListings,sig)){return;}
 
     console.log(JSON.stringify(currentListing));
