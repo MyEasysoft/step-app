@@ -94,7 +94,7 @@ const updateUser = (isSeller)=>{
     console.log(JSON.stringify(currentListing));
     updateUserProfileData(currentListing);
   })
-
+  
   const updateUserProfileData = (currentListings)=>{
     if(currentListings === undefined){
       const listingDetails = {
@@ -131,7 +131,7 @@ const updateUser = (isSeller)=>{
     }else{
             if(checkIfExist(currentListings,sig)){return;}
 
-          console.log(JSON.stringify(currentListing));
+          //console.log(JSON.stringify(currentListing));
           console.log("Step H   ------------------------------------");
           //New listing to be added
           const listingDetails = {
