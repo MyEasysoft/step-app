@@ -84,6 +84,9 @@ const defaultDirectives = {
 
     // Stripe
     '*.stripe.com',
+    'api.whereby.dev/v1/meetings',
+    'mymedicalmentors.com',
+    'www.mymedicalmentors.com',
   ],
   scriptSrc: [
     self,

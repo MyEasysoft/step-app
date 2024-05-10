@@ -4,7 +4,6 @@ const integrationSdk = sharetribeIntegrationSdk.createInstance({
    clientSecret: process.env.SHARETRIBE_INTEGRATION_CLIENT_SECRET
  });
 
-console.log( "==============Working  iiiiiiiiiiiiiiiiii==================");
 module.exports = async (req, res) => {
 
     //let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
