@@ -87,6 +87,8 @@ const defaultDirectives = {
     'api.whereby.dev/v1/meetings',
     'mymedicalmentors.com',
     'www.mymedicalmentors.com',
+    'steps.herokuapp.com',
+    'steps.herokuapp.com/site.webmanifest',
   ],
   scriptSrc: [
     self,
