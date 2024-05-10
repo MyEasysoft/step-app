@@ -97,44 +97,76 @@ const updateUser = (isSeller)=>{
 
   const updateUserProfileData = (currentListings)=>{
     if(currentListings === undefined){
-      currentListings = {};
+      const listingDetails = {
+        sig:sig,
+        listingId:listingId,   //Id of the listing that is being paid for
+        videoCallData:data,            
+      };
+
+       //get listing object
+       const newCon = [];
+       newCon.push(listingDetails);
+       const updatedListing = Object.assign({},newCon);
+
+       //compile user data
+       const id = isSeller? buyerId:authorId;
+       console.log("Step G   ---------------ooooooooooooooooooooooooooo-----------------------");
+      integrationSdk.users.updateProfile(
+        {
+          id: id,
+          privateData: {
+            listingPaidFor:updatedListing,
+          },
+        
+        }
+
+      ).then(res => {
+        console.log(`Success with status: ${res.status} ${res.statusText}`);
+        })
+        .catch(res=>{
+          console.log(`Request failed with status: ${res.status} ${res.statusText}`);
+        });
+
+
+    }else{
+            if(checkIfExist(currentListings,sig)){return;}
+
+          console.log(JSON.stringify(currentListing));
+          console.log("Step H   ------------------------------------");
+          //New listing to be added
+          const listingDetails = {
+            sig:sig,
+            listingId:listingId,   //Id of the listing that is being paid for
+            videoCallData:data,            
+          };
+
+          //get listing object
+          const newCon = separateObject(currentListings);
+          newCon.push(listingDetails);
+          const updatedListing = Object.assign({},newCon);
+
+          //compile user data
+          const id = isSeller? buyerId:authorId;
+          
+          console.log("Step I   ------------------------------------");
+          integrationSdk.users.updateProfile(
+          {
+            id: id,
+            privateData: {
+              listingPaidFor:updatedListing,
+            },
+          
+          }
+
+        ).then(res => {
+          console.log(`Success with status: ${res.status} ${res.statusText}`);
+          })
+          .catch(res=>{
+            console.log(`Request failed with status: ${res.status} ${res.statusText}`);
+          });
+        };
     }
-    if(checkIfExist(currentListings,sig)){return;}
-
-    console.log(JSON.stringify(currentListing));
-    console.log("Step H   ------------------------------------");
-    //New listing to be added
-    const listingDetails = {
-      sig:sig,
-      listingId:listingId,   //Id of the listing that is being paid for
-      videoCallData:data,            
-    };
-
-    //get listing object
-    const newCon = separateObject(currentListings);
-    newCon.push(listingDetails);
-    const updatedListing = Object.assign({},newCon);
-
-    //compile user data
-    const id = isSeller? buyerId:authorId;
-    
-    console.log("Step I   ------------------------------------");
-    integrationSdk.users.updateProfile(
-    {
-      id: id,
-      privateData: {
-        listingPaidFor:updatedListing,
-      },
-     
-    }
-
-  ).then(res => {
-    console.log(`Success with status: ${res.status} ${res.statusText}`);
-    })
-    .catch(res=>{
-      console.log(`Request failed with status: ${res.status} ${res.statusText}`);
-    });
-  };
+   
 
   }
 
