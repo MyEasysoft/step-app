@@ -104,7 +104,7 @@ class SendMessageFormComponent extends Component {
                   ) : null}
                 </div>
 
-                {roomUrl !== undefined && roomUrl.includes("https://roff-studio.whereby.com")?
+                {roomUrl !== undefined && roomUrl.includes("whereby.com")?
                     <ExternalLink href={roomUrl} className={css.callBtn}>
                       <img src={videoCall} className={css.vidCallBtn}/>
                       
