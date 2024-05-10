@@ -76,10 +76,6 @@ const data = await response.json();
     return exist;
   };
 
-
-
-
-
 //Update either a Buyer or Author Info
 const updateUser = (isSeller)=>{
  
@@ -95,12 +91,15 @@ const updateUser = (isSeller)=>{
    
     const currentListing = res?.data.data.attributes.profile.privateData.listingPaidFor;
     console.log("Step G   --------------------------------------");
+    console.log(JSON.stringify(currentListing));
     updateUserProfileData(currentListing);
   })
 
   const updateUserProfileData = (currentListings)=>{
     if(checkIfExist(currentListings,sig)){return;}
 
+    console.log(JSON.stringify(currentListing));
+    console.log("Step H   ------------------------------------");
     //New listing to be added
     const listingDetails = {
       sig:sig,
@@ -116,7 +115,7 @@ const updateUser = (isSeller)=>{
     //compile user data
     const id = isSeller? buyerId:authorId;
     
-    console.log("Step H   ------------------------------------");
+    console.log("Step I   ------------------------------------");
     integrationSdk.users.updateProfile(
     {
       id: id,

@@ -201,7 +201,7 @@ export class TransactionPanelComponent extends Component {
     
      console.log(stateData?.processState + "   aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaOOOOOOOOOOOOOOOOOOOOOOOaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     
-      if(isPurchased){
+      if(true){
         const data = {
           buyerId:customer?.id?.uuid,
           authorId:provider?.id?.uuid,
