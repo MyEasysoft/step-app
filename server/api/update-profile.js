@@ -89,9 +89,9 @@ const updateUser = (isSeller)=>{
     parameters
   ).then(async res => {
    
-    const currentListing = res?.data.data.attributes.profile.privateData.listingPaidFor;
+    const currentListing = res?.data?.data?.attributes?.profile?.privateData?.listingPaidFor;
     console.log("Step G   --------------------------------------");
-    console.log(JSON.stringify(currentListing));
+    //console.log(JSON.stringify(currentListing));
     updateUserProfileData(currentListing);
   })
   
