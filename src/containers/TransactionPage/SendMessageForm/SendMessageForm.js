@@ -79,6 +79,7 @@ class SendMessageFormComponent extends Component {
             form,
             formId,
             roomUrl,
+            txStatus,
           } = formRenderProps;
 
           const classes = classNames(rootClassName || css.root, className);
@@ -108,7 +109,7 @@ class SendMessageFormComponent extends Component {
                     <ExternalLink href={roomUrl} className={css.callBtn}>
                       <img src={videoCall} className={css.vidCallBtn}/>
                       
-                    </ExternalLink>:""
+                    </ExternalLink>:txStatus?<></>:""
                  }
                 
                 <SecondaryButtonInline

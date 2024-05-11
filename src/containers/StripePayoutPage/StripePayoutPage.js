@@ -108,8 +108,13 @@ export const StripePayoutPageComponent = props => {
   const formDisabled = getAccountLinkInProgress;
 
   const rootURL = config.marketplaceRootURL;
-  const successURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_SUCCESS, rootURL, routes);
-  const failureURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_FAILURE, rootURL, routes);
+  //const successURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_SUCCESS, rootURL, routes);
+  //const failureURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_FAILURE, rootURL, routes);
+  const successURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_SUCCESS, "https://www.mymedicalmentors.com", routes);
+  const failureURL = createReturnURL(STRIPE_ONBOARDING_RETURN_URL_FAILURE, "https://www.mymedicalmentors.com", routes);
+  
+  console.log(successURL + "     =========================================================");
+  console.log(failureURL + "     ==========================================================");
 
   const accountId = stripeConnected ? stripeAccount.id : null;
   const stripeAccountData = stripeConnected ? getStripeAccountData(stripeAccount) : null;
